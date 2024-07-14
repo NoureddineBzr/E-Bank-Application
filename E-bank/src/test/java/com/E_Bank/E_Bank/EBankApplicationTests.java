@@ -1,4 +1,4 @@
-package com.example.E_bank;
+package com.E_Bank.E_Bank;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
