@@ -1,0 +1,31 @@
+<div *ngIf="account; else loading">
+  <h2>Account Details</h2>
+  <div>
+    <label>Account Number:</label>
+    <span>{{ account.accountNumber }}</span>
+  </div>
+  <div>
+    <label>Balance:</label>
+    <span>{{ account.balance | currency }}</span>
+  </div>
+  <div>
+    <label>Account Type:</label>
+    <span>{{ account.accountType }}</span>
+  </div>
+  <div>
+    <label>Date Created:</label>
+    <span>{{ account.dateCreation | date }}</span>
+  </div>
+  <div>
+    <label>Account Closed:</label>
+    <span>{{ account.accountClosed ? 'Yes' : 'No' }}</span>
+  </div>
+  <div>
+    <label>Reason for Closing:</label>
+    <span>{{ account.raisonClosing }}</span>
+  </div>
+  <button [routerLink]="['/accounts', account.id, 'edit']">Edit</button>
+</div>
+<ng-template #loading>
+  <p>Loading account details...</p>
+</ng-template>

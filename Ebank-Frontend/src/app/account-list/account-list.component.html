@@ -1,0 +1,23 @@
+<div class="account-list-container">
+  <h2>Accounts</h2>
+  <button routerLink="/account-form">Create Account</button>
+  <div *ngIf="accounts.length > 0; else noAccounts">
+    <ul>
+      <li *ngFor="let account of accounts">
+        <div>
+          <span>{{ account.accountNumber }}</span>
+          <span>{{ account.balance}}</span>
+          <span>{{ account.accountType }}</span>
+        </div>
+        <button [routerLink]="['/accounts', account.id]">Details</button>
+        <button (click)="deleteAccount(account.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  <ng-template #noAccounts>
+    <p>No accounts available.</p>
+  </ng-template>
+</div>
+
+<router-outlet />
+
